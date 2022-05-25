@@ -78,7 +78,7 @@ li a:hover:not(.active) {
   <li><a href="#news">insert</a></li>
   <li><a href="panelselect.php">delete</a></li>
   <li><a href="panelupdate.php">update</a></li>
-  <li><a class="class" href="logout.php" >LOGOUT</a></li>
+  <li><a class="class" href="logout.php" >logout</a></li>
 </ul>                    </div>
 
 

@@ -58,9 +58,7 @@ li a:hover:not(.active) {
     </script>
 </head>
 <body>  
- 
-
-   <!-- <div class="container"> -->
+ <!-- <div class="container"> -->
                 <div class="row">
                     <div class="col-2">
 <ul>
@@ -68,9 +66,8 @@ li a:hover:not(.active) {
   <li><a href="#news">insert</a></li>
   <li><a href="panelselect.php">delet</a></li>
   <li><a href="panelupdate.php">update</a></li>
-  <li><a class="class" href="logout.php" >LOGOUT</a></li>
+  <li><a class="class" href="logout.php" >logout</a></li>
 </ul>                    </div>
-
 <div class="col-10">
 <table class="table">
   <tr>
@@ -80,17 +77,17 @@ li a:hover:not(.active) {
           <th>tools</th>
         </tr>
                    <?php 
-                    $select_product = mysqli_query($link , ' SELECT category.id  ,category.name  as cat_name ,product.mo_year 
+                    $select_product = mysqli_query($link , ' SELECT category.id  as cat_id ,product.id as product_id ,category.name  as cat_name ,product.mo_year 
                              FROM product JOIN category 
                              ON product.cat_id = category.id 
                              WHERE category.id = product.cat_id');
                     while($exc = mysqli_fetch_assoc($select_product)){
                       echo '<Tr>';
-                      echo '<Td>'.$exc['id'].'</td>';
+                      echo '<Td>'.$exc['product_id'].'</td>';
                       echo '<Td>'.$exc['mo_year'].'</td>';
                       echo '<Td>'.$exc['cat_name'].'</td>';
-                      echo '<Td><A href="paneledit.php?mo_year='.$exc['mo_year'].'" class="btn btn-primary">Edit</a>
-                                <a href="paneldelete.php?mo_year='.$exc['mo_year'].'" class="btn btn-primary">Delete</a></td>';
+                      echo '<Td><A href="paneledit.php?id='.$exc['product_id'].'" class="btn btn-primary">Edit</a>
+                                <a href="paneldelete.php?id='.$exc['product_id'].'" class="btn btn-primary">Delete</a></td>';
                       echo '</tr>';
                     }
                    ?>

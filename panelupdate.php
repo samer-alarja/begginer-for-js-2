@@ -36,7 +36,7 @@
     </script>
 </head>
 <body>
-   <h1 >update page</h1> 
+   <h1 >update </h1> 
    <?php 
         $select = mysqli_query($link , 'select username,email,password From login where id = '.$_SESSION['id']);
         list($username , $email , $password )  = mysqli_fetch_row($select);
